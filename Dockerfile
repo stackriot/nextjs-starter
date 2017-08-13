@@ -1,26 +1,25 @@
-## BUILDING
-##   (from project root directory)
-##   $ docker build -t nextjs-starter .
-##
-## RUNNING
-##   $ docker run -p 27017:27017 mongodb-for-stackriot-nextjs-starter
-##
-## CONNECTING
-##   Lookup the IP of your active docker host using:
-##     $ docker-machine ip $(docker-machine active)
-##   Connect to the container at DOCKER_IP:27017
-##     replacing DOCKER_IP for the IP of your active docker host
-##
-## NOTES
-##   This is a prebuilt version of MongoDB.
-##   For more information and documentation visit:
-##     https://github.com/bitnami/bitnami-docker-mongodb
+FROM gcr.io/bitnami-containers/minideb-extras:jessie-r14-buildpack
 
-FROM gcr.io/bitnami-containers/mongodb:3.4.7-r0
+MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV STACKSMITH_STACK_ID="6pt9lk5" \
+ENV STACKSMITH_STACK_ID="z8tjs4t" \
     STACKSMITH_STACK_NAME="nextjs-starter" \
-    STACKSMITH_STACK_PRIVATE="1" \
-    BITNAMI_CONTAINER_ORIGIN="stacksmith"
+    STACKSMITH_STACK_PRIVATE="1"
+
+# Install required system packages
+RUN install_packages libc6 libssl1.0.0 libncurses5 libtinfo5 libsqlite3-0 zlib1g libbz2-1.0 libreadline6 libstdc++6 libgcc1 ghostscript imagemagick libmysqlclient18
+
+RUN bitnami-pkg install node-8.3.0-0 --checksum 56940ac3c1630e1073c1566a2636953f758afa0ae28cadf34ab35278a5a979b9
+
+ENV PATH=/opt/bitnami/node/bin:/opt/bitnami/python/bin:$PATH \
+    NODE_PATH=/opt/bitnami/node/lib/node_modules
 
 ## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
+
+# Node base template
+COPY . /app
+WORKDIR /app
+
+RUN npm install
+
+CMD ["node"]
