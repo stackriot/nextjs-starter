@@ -59,7 +59,7 @@ export default class extends Page {
           For tips on configuring authentication see <a href="https://github.com/stackriot/nextjs-starter/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a>
         </p>
         <p>
-          Almost all options you might want configure can be set by creating .env file which is read at startup. See <a href="https://github.com/stackriot/nextjs-starter/blob/master/.env.default">.env.default</a> for an example with all the supported options.
+          Almost all options you might want configure can be set by creating .env file which is read at startup. See <a href="https://github.com/stackriot/nextjs-starter/blob/master/server/.env.example">.env.example</a> for an example with all the supported options.
         </p>
         <p>
           You can find the source for this project on GitHub at <Link href="https://github.com/stackriot/nextjs-starter"><a>https://github.com/stackriot/nextjs-starter</a></Link>

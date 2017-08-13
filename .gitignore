@@ -1,4 +1,5 @@
-.next/
-node_modules/
-/npm-debug.log
-.env
+.idea
+node_modules
+dist
+coverage
+server/config/.env

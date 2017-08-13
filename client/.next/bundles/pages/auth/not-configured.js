@@ -1,0 +1,6 @@
+
+          window.__NEXT_REGISTER_PAGE('/auth/not-configured', function() {
+            var comp = module.exports=webpackJsonp([10],{125:function(e,t,u){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var l=u(3),a=n(l),r=u(1),f=n(r),d=u(2),i=n(d),o=u(6),s=n(o),c=u(5),p=n(c),h=u(17),m=n(h),_=u(0),E=n(_),v=u(19),g=n(v),b=u(18),y=n(b),k=function(e){function t(){return(0,f.default)(this,t),(0,s.default)(this,(t.__proto__||(0,a.default)(t)).apply(this,arguments))}return(0,p.default)(t,e),(0,i.default)(t,[{key:"render",value:function(){return E.default.createElement(y.default,{session:this.props.session},E.default.createElement("h2",null,"Not configured"),E.default.createElement("p",null,"This oAuth provider has not been configured."),E.default.createElement("p",null,E.default.createElement(m.default,{href:"/auth/signin"},E.default.createElement("a",null,"Sign in via email"))))}}]),t}(g.default);t.default=k},263:function(e,t,u){e.exports=u(125)}},[263]);
+            return { page: comp.default }
+          })
+        

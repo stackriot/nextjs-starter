@@ -2,7 +2,7 @@
   "name": "nextjs-starter",
   "version": "2.13.0",
   "description": "A starter Next.js project with email and oAuth authentication",
-  "author": "Iain Collins <me@stackriot.com>",
+  "author": "Seth Bergman",
   "license": "ISC",
   "repository": "https://github.com/stackriot/nextjs-starter.git",
   "main": "index.js",
@@ -48,12 +48,13 @@
   },
   "scripts": {
     "test": "xo",
+    "next": "next",
     "dev": "NODE_ENV=development PORT=3000 node index.js",
-    "build": "next build",
+    "build": "next build && npm start",
     "start": "node index.js"
   },
   "engines": {
-    "node": "7.x.x"
+    "node": "8.x.x"
   },
   "xo": {
     "space:": 2,

@@ -1,0 +1,6 @@
+
+          window.__NEXT_REGISTER_PAGE('/auth/error/email', function() {
+            var comp = module.exports=webpackJsonp([12],{123:function(e,t,n){"use strict";function l(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var u=n(3),a=l(u),i=n(1),r=l(i),s=n(2),f=l(s),d=n(6),o=l(d),c=n(5),p=l(c),h=n(17),_=l(h),m=n(0),E=l(m),g=n(19),k=l(g),v=n(18),y=l(v),b=function(e){function t(){return(0,r.default)(this,t),(0,o.default)(this,(t.__proto__||(0,a.default)(t)).apply(this,arguments))}return(0,p.default)(t,e),(0,f.default)(t,[{key:"render",value:function(){return E.default.createElement(y.default,{session:this.props.session},E.default.createElement("h2",null,"Unable to sign in"),E.default.createElement("p",null,"The link you tried to use to sign in was not valid."),E.default.createElement("p",null,E.default.createElement(_.default,{href:"/auth/signin"},E.default.createElement("a",null,"Request a new sign in link."))))}}]),t}(k.default);t.default=b},261:function(e,t,n){e.exports=n(123)}},[261]);
+            return { page: comp.default }
+          })
+        

@@ -52,7 +52,7 @@ Configuration steps:
 
 1. Visit [Google Cloud Console](https://cloud.google.com/console/project)
 2. Click the **CREATE PROJECT** button, enter a *Project Name* and click **CREATE**
-3. Then select *APIs* then *Credentials* 
+3. Then select *APIs* then *Credentials*
 4. Select **Create new oAuth Client ID** and enter the following:
  - **Application Type**: Web Application
  - **Authorized Javascript origins**: `http://your-server.example.com/`
@@ -61,13 +61,13 @@ Configuration steps:
 6. Specify *Client Secret* as the **GOOGLE_SECRET** Config Variable
 7. Enable Google+ on the project - if you don't, sign in with Google+ will fail!
 
-### Twitter 
+### Twitter
 
 Environment variables:
 
 * TWITTER_KEY
 * TWITTER_SECRET
-  
+
 Configuration steps:
 
 1. Sign in at [https://dev.twitter.com](https://dev.twitter.com/)

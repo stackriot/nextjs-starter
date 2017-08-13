@@ -1,78 +1,79 @@
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-# Next.js 2.0 Starter Project
+![NodeJS RESTful API Microservice Logo](https://github.com/Abdizriel/nodejs-microservice-starter/blob/master/logo.jpg)
 
-This is a starter [Next.js 2.0](https://zeit.co/blog/next) project that shows how to put together a website with server and client side rendering powered by Next.js, which uses React.
+# NodeJS RESTful API Microservice Starter v1.2.0
+This repository contains a full configuration that runs NodeJS RESTful API Microservice Starter.
 
-Like all Next.js projects it features automatic pre-fetching of templates with a ServiceWorker, renders pages both client and server side and live reloading in development. It also shows how to use features new in Next.js version 2.0 like integration with Express for custom route handling.
+[![Build Status](https://secure.travis-ci.org/Abdizriel/nodejs-microservice-starter.png?branch=master)](https://travis-ci.org/Abdizriel/nodejs-microservice-starter)
+[![Coverage Status](https://coveralls.io/repos/github/Abdizriel/nodejs-microservice-starter/badge.svg?branch=master)](https://coveralls.io/github/Abdizriel/nodejs-microservice-starter?branch=master)
+[![Dependency Status](https://img.shields.io/david/Abdizriel/nodejs-microservice-starter.svg)](https://david-dm.org/Abdizriel/nodejs-microservice-starter)
+[![Dev-Dependency Status](https://img.shields.io/david/dev/Abdizriel/nodejs-microservice-starter.svg)](https://david-dm.org/Abdizriel/nodejs-microservice-starter#info=devDependencies)
 
-There are practical examples with header, footer and layout files, how to add page-specific CSS and JavaScript and header elements, how to write code that does asynchronous data fetching, how to write different logic for fetching data on the client and server if you need to.
+## Requirements
 
-It includes session support (with CSRF and XSS protection), email based sign-in sytem and integrates with Passport to support signing in with Facebook, Google, Twitter and other sites that support oAuth.
+* [MongoDB](https://www.mongodb.com/download-center "MongoDB")
+* [NodeJS](https://nodejs.org/en/download "NodeJS")
 
-All functionality works both client and server side - including without JavaScript support in the browser.
+## Build for local development
 
-*Important!* Please upgrade to version 2.8 or newer as this resolves all known cross browser compatibility issues, including session behaviour with Internet Explorer.
+You have to use the following command to start a development server:
 
-## Demo
+```sh
+npm run dev
+```
 
-You can try it out at https://nextjs-starter.now.sh
+See `package.json` for more details.
 
-The demo is hosted on Next.js creators [Zeit's](https://zeit.co) cloud platform.
+## Build for staging and production environments
 
-## Running locally in development mode
+Use following command to build project:
 
-To get started in development mode, just clone the repository and run:
+```sh
+npm run build
+```
 
-    npm install
-    npm run dev
+Use following command to start project on staging and production environments:
 
-## Building and deploying in production
+```sh
+npm start
+```
 
-If you wanted to run this site in production run:
+See `package.json` for more details.
 
-    npm install
-    npm run build
-    npm start
+## Tests
 
-You should run the the build step again any time you make changes to pages or
-components.
+Following tests libraries are used for unit/integration tests:
+* [MochaJS](https://mochajs.org "MochaJS")
+* [SinonJS](http://sinonjs.org "SinonJS")
+* [ChaiJS](http://chaijs.com/ "ChaiJS")
 
-Note: If you are already running a webserver on port 80 (e.g. Macs usually have the Apache webserver running on port 80) you can still start the example in production mode by passing a different port as an Environment Variable when starting (e.g. `PORT=3000 npm start`).
+Tests are kept next to source with following pattern *.spec.js
 
-## Configuring
+Use following command to run tests:
 
-If you configure a .env file (just copy [.env.default](https://github.com/stackriot/nextjs-starter/blob/master/.env.default) over to '.env' and fill in the options) you can configure a range of options.
+```sh
+npm test
+```
 
-See the [AUTHENTICATION.md](https://github.com/stackriot/nextjs-starter/blob/master/AUTHENTICATION.md) for how to set up oAuth if you want to do that. It suggested you start with Twitter as it's the easiest to get working.
+Use following command to run tests coverage:
 
-## Deploying to the cloud with now.sh
+```sh
+npm run coverage
+```
 
-To deploy on [Zeit's](https://zeit.co) cloud platform `now` just install it, clone this repository and run `now` in the working directory:
+## Docker container
 
-    npm install -g now
-    now
+There is available Docker container and Docker Composer if you would like to run many NodeJS Microservices.
 
-If you configure a .env file `now` will include it when deploying if you use the -E option to deploy:
+Build API Microservice by using following command:
 
-    now -E
+```sh
+npm run build
+```
 
-## Debugging
+Then use following command to build Docker containers:
 
-If you configure a .env file with value for *LOGS_SECRET* and deploy with `now -E` you can use [now-logs](https://github.com/berzniz/now-logs) to view logs remotely.
+```sh
+docker-compose up -d --build
+```
 
-    npm install -g now-logs
-    now-logs my-secret-value
-
-## Running tests
-
-Style formatting is enforced with the JavaScript style linter [xo](https://github.com/sindresorhus/xo) which is invoked when running `npm test`.
-
-Reflecting how most examples of Next.js are written, in  `package.json` we have configured 'xo' to tell it this project uses spaces (not tabs) in both JavaScript and JSX and to not use semicolons.
-
-xo needs to be installed globally:
-
-    install -g xo
-
-You can check linting by running `xo` or by running `npm test`.
-
-Note: There are currently no application specific tests, beyond style checking.
+See `Dockerfile` and `docker-compose.yml` for more details.

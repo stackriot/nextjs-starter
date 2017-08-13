@@ -1,30 +1,50 @@
-version: '2'
+# Reverse Proxy
+nginx:
+    build: ./nginx
+    links:
+        - microservice1:microservice1
+        - microservice2:microservice2
+        - microservice3:microservice3
+    ports:
+        - "80:80"
 
-services:
-  mongodb:
-    image: 'bitnami/mongodb:latest'
-    environment:  STACKSMITH_STACK_ID="6pt9lk5" \
-                  STACKSMITH_STACK_NAME="nextjs-starter" \
-                  STACKSMITH_STACK_PRIVATE="1" \
-                  BITNAMI_CONTAINER_ORIGIN="stacksmith"
-    myapp:
-      tty: true # Enables debugging capabilities when attached to this container.
-      image: 'bitnami/node:latest'
-      labels:
-        kompose.service.type: nodeport
-      command: npm run build && npm start
-      environment:
-        - PORT=3000
-        - NODE_ENV=production
-        - DATABASE_URL=mongodb://mongodb:27017/nextjs-starter
+# NodeJS RESTful API Microservice
+microservice1:
+    build: ./server/dist
+    links:
+        - mongo:mongo
+    ports:
+        - "9001:9000"
+    environment:
+        NODE_ENV: production
+        MONGODB_URI: mongodb://mongo/service
+        IP: 0.0.0.0
+        PORT: 9000
+microservice2:
+    build: ./server/dist
+    links:
+        - mongo:mongo
+    ports:
+        - "9002:9000"
+    environment:
+        NODE_ENV: production
+        MONGODB_URI: mongodb://mongo/service
+        IP: 0.0.0.0
+        PORT: 9000
+microservice3:
+    build: ./server/dist
+    links:
+        - mongo:mongo
+    ports:
+        - "9003:9000"
+    environment:
+        NODE_ENV: production
+        MONGODB_URI: mongodb://mongo/service
+        IP: 0.0.0.0
+        PORT: 9000
 
-        - SKIP_DB_WAIT=0
-        - SKIP_DB_MIGRATION=0
-        - SKIP_NPM_INSTALL=0
-        - SKIP_BOWER_INSTALL=0
-      depends_on:
-        - mongodb
-      ports:
-        - 3000:3000
-      volumes:
-        - .:/app
+# MongoDB
+mongo:
+    image: mongo
+    ports:
+        - "27017:27017"

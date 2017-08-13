@@ -12,7 +12,7 @@ export default class {
 
   static async getData() {
     // This version of fetch runs in browsers as well as sever side
-    let res = await fetch('//jsonplaceholder.typicode.com/posts')
+    let res = await fetch('/api/posts')
     let data = await res.json()
     return data
   }
