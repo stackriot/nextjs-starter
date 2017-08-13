@@ -4,7 +4,7 @@ import request from 'supertest';
 import { expect } from 'chai';
 import Service from './service.model';
 
-let app = require('../..');
+let app = require('../../../');
 let newService;
 
 describe('Service API:', () => {
