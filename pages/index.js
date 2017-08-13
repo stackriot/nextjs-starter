@@ -53,16 +53,16 @@ export default class extends Page {
         </p>
         <h3>Configuration</h3>
         <p>
-          For information on how to build and deploy see <a href="https://github.com/iaincollins/nextjs-starter/blob/master/README.md">README.md</a>
+          For information on how to build and deploy see <a href="https://github.com/stackriot/nextjs-starter/blob/master/README.md">README.md</a>
         </p>
         <p>
-          For tips on configuring authentication see <a href="https://github.com/iaincollins/nextjs-starter/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a>
+          For tips on configuring authentication see <a href="https://github.com/stackriot/nextjs-starter/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a>
         </p>
         <p>
-          Almost all options you might want configure can be set by creating .env file which is read at startup. See <a href="https://github.com/iaincollins/nextjs-starter/blob/master/.env.default">.env.default</a> for an example with all the supported options.
+          Almost all options you might want configure can be set by creating .env file which is read at startup. See <a href="https://github.com/stackriot/nextjs-starter/blob/master/.env.default">.env.default</a> for an example with all the supported options.
         </p>
         <p>
-          You can find the source for this project on GitHub at <Link href="https://github.com/iaincollins/nextjs-starter"><a>https://github.com/iaincollins/nextjs-starter</a></Link>
+          You can find the source for this project on GitHub at <Link href="https://github.com/stackriot/nextjs-starter"><a>https://github.com/stackriot/nextjs-starter</a></Link>
         </p>
       </Layout>
     )

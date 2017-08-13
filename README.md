@@ -41,9 +41,9 @@ Note: If you are already running a webserver on port 80 (e.g. Macs usually have 
 
 ## Configuring
 
-If you configure a .env file (just copy [.env.default](https://github.com/iaincollins/nextjs-starter/blob/master/.env.default) over to '.env' and fill in the options) you can configure a range of options.
+If you configure a .env file (just copy [.env.default](https://github.com/stackriot/nextjs-starter/blob/master/.env.default) over to '.env' and fill in the options) you can configure a range of options.
 
-See the [AUTHENTICATION.md](https://github.com/iaincollins/nextjs-starter/blob/master/AUTHENTICATION.md) for how to set up oAuth if you want to do that. It suggested you start with Twitter as it's the easiest to get working.
+See the [AUTHENTICATION.md](https://github.com/stackriot/nextjs-starter/blob/master/AUTHENTICATION.md) for how to set up oAuth if you want to do that. It suggested you start with Twitter as it's the easiest to get working.
 
 ## Deploying to the cloud with now.sh
 

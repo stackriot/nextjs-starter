@@ -142,7 +142,7 @@ export default class extends Page {
         <p>
           By default, user data is persisted on the server in SQL Lite as this requires no configuration to get started,
           but this can be easily changed to another database - including MongoDB, MySQL, PostgreSQL, Amazon Redshift and others
-          by setting the DB_CONNECTION_STRING environment variable accordingly. It works great with database providers like <a href="https://mlab.com">mLab</a>.
+          by setting the MONGO_URI environment variable accordingly. It works great with database providers like <a href="https://mlab.com">mLab</a>.
         </p>
         <p>
           For larger sites, a fully decoupled authentication system, running on a seperate backend,
@@ -152,15 +152,15 @@ export default class extends Page {
         <p>
           To use the oAuth sign in options, you will need to create your own account with each provider and configure each one for your site.
           This can be a slightly cumbersome process that is hard to debug.
-          See <a href="https://github.com/iaincollins/nextjs-starter/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a> for 
-          a step-by-step guide to configuring oAuth and check out <a href="https://github.com/iaincollins/nextjs-starter/blob/master/routes/passport-strategies.js">passport-strategies.js</a> if
+          See <a href="https://github.com/stackriot/nextjs-starter/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a> for 
+          a step-by-step guide to configuring oAuth and check out <a href="https://github.com/stackriot/nextjs-starter/blob/master/routes/passport-strategies.js">passport-strategies.js</a> if
           you want to add support for other oAuth providers (e.g. GitHub) using other Passport Strategies.
         </p>
         <p>
           If you aren&#39;t receiving emails when trying to sign in via email, try configuring the mail server option. 
         </p>
         <p>
-          See <a href="https://github.com/iaincollins/nextjs-starter/blob/master/.env.default">.env.default</a> for all the options you can use in your .env file.
+          See <a href="https://github.com/stackriot/nextjs-starter/blob/master/.env.default">.env.default</a> for all the options you can use in your .env file.
         </p>
       </Layout>
     )

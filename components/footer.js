@@ -9,7 +9,7 @@ export default() => (
       <p>
         <Link prefetch href="/"><a><strong>Home</strong></a></Link>
         &nbsp;|&nbsp;
-        <Link href="https://github.com/iaincollins/nextjs-starter"><a>nextjs-starter {Package.version}</a></Link>
+        <Link href="https://github.com/stackriot/nextjs-starter"><a>nextjs-starter {Package.version}</a></Link>
         &nbsp;|&nbsp;
         <Link href="https://github.com/zeit/next.js"><a>nextjs {Package.dependencies.next}</a></Link>
         &nbsp;| &copy; {new Date().getYear() + 1900}

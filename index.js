@@ -26,15 +26,15 @@ process.on('unhandledRejection', (reason, p) => {
 // Default when run with `npm start` is 'production' and default port is '80'
 // `npm run dev` defaults mode to 'development' & port to '3000'
 process.env.NODE_ENV = process.env.NODE_ENV || 'production'
-process.env.PORT = process.env.PORT || 80
+process.env.PORT = process.env.PORT || 3000
 
 // Configure a database to store user profiles and email sign in tokens
 // Database connection string for ORM (e.g. MongoDB/Amazon Redshift/SQL DB…)
 // By default it uses SQL Lite to create a DB in /tmp/nextjs-starter.db
-process.env.DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'sqlite:///tmp/nextjs-starter.db'
+process.env.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/nextjs'
 
 // Secret used to encrypt session data stored on the server
-process.env.SESSION_SECRET = process.env.SESSION_SECRET || 'change-me'
+process.env.SESSION_SECRET = process.env.SESSION_SECRET || 'soSuperdeDuperleSecret'
 
 // If EMAIL_USERNAME and EMAIL_PASSWORD are configured use them to send email.
 // e.g. For a Google Mail account (@gmail.com) set EMAIL_SERVICE to 'gmail'
@@ -68,7 +68,7 @@ app.prepare()
   // Set it up the database (used to store user info and email sign in tokens)
   return new Promise((resolve, reject) => {
     // Before we can set up authentication routes we need to set up a database
-    orm.connect(process.env.DB_CONNECTION_STRING, function (err, db) {
+    orm.connect(process.env.MONGO_URI, function (err, db) {
       if (err) {
         return reject(err)
       }
