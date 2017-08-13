@@ -31,7 +31,7 @@ process.env.PORT = process.env.PORT || 3000
 // Configure a database to store user profiles and email sign in tokens
 // Database connection string for ORM (e.g. MongoDB/Amazon Redshift/SQL DB…)
 // By default it uses SQL Lite to create a DB in /tmp/nextjs-starter.db
-process.env.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/nextjs'
+process.env.MONGO_URI = process.env.MONGO_URI || ''
 
 // Secret used to encrypt session data stored on the server
 process.env.SESSION_SECRET = process.env.SESSION_SECRET || 'soSuperdeDuperleSecret'

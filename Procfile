@@ -1,1 +1,1 @@
-web: docker build -t nextjs-starter .
+docker: docker build -t nextjs-starter .

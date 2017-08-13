@@ -1,6 +1,6 @@
 ## BUILDING
 ##   (from project root directory)
-##   $ docker build -t mongodb-for-stackriot-nextjs-starter .
+##   $ docker build -t nextjs-starter .
 ##
 ## RUNNING
 ##   $ docker run -p 27017:27017 mongodb-for-stackriot-nextjs-starter
