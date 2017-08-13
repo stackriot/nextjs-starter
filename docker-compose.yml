@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  mongodb:
+    image: 'bitnami/mongodb:latest'
+    environment:  STACKSMITH_STACK_ID="6pt9lk5" \
+                  STACKSMITH_STACK_NAME="nextjs-starter" \
+                  STACKSMITH_STACK_PRIVATE="1" \
+                  BITNAMI_CONTAINER_ORIGIN="stacksmith"
+    myapp:
+      tty: true # Enables debugging capabilities when attached to this container.
+      image: 'bitnami/node:latest'
+      labels:
+        kompose.service.type: nodeport
+      command: npm run build && npm start
+      environment:
+        - PORT=3000
+        - NODE_ENV=production
+        - DATABASE_URL=mongodb://mongodb:27017/nextjs-starter
+
+        - SKIP_DB_WAIT=0
+        - SKIP_DB_MIGRATION=0
+        - SKIP_NPM_INSTALL=0
+        - SKIP_BOWER_INSTALL=0
+      depends_on:
+        - mongodb
+      ports:
+        - 3000:3000
+      volumes:
+        - .:/app
