@@ -19,7 +19,7 @@
 FROM gcr.io/bitnami-containers/mongodb:3.4.7-r0
 
 ENV STACKSMITH_STACK_ID="6pt9lk5" \
-    STACKSMITH_STACK_NAME="MongoDB for stackriot/nextjs-starter" \
+    STACKSMITH_STACK_NAME="nextjs-starter" \
     STACKSMITH_STACK_PRIVATE="1" \
     BITNAMI_CONTAINER_ORIGIN="stacksmith"
 
