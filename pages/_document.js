@@ -1,7 +1,7 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, {Head, Main, NextScript} from 'next/document'
 
 export default class DefaultDocument extends Document {
-  static async getInitialProps (ctx) {
+  static async getInitialProps(ctx) {
     return await Document.getInitialProps(ctx)
   }
 
@@ -12,12 +12,11 @@ export default class DefaultDocument extends Document {
     **/
     return (
       <html lang={this.props.__NEXT_DATA__.props.lang || 'en'}>
-        <Head>
-        </Head>
+        <Head/>
         <body>
           {this.props.customValue}
-          <Main />
-          <NextScript />
+          <Main/>
+          <NextScript/>
         </body>
       </html>
     )

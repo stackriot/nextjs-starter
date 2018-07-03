@@ -1,15 +1,14 @@
 import React from 'react'
 import Router from 'next/router'
+import {NextAuth} from 'next-auth/client'
 import Page from '../../components/page'
 import Layout from '../../components/layout'
-import { NextAuth } from 'next-auth/client'
 
 export default class extends Page {
-
   static async getInitialProps({req, res, query}) {
-    let props = await super.getInitialProps({req})
-    props.session = await NextAuth.init({force: true, req: req})
-    
+    const props = await super.getInitialProps({req})
+    props.session = await NextAuth.init({force: true, req})
+
     // If signed in already, instead of displaying message send to callback page
     // which should redirect them to whatever page it normally sends clients to
     if (props.session.user) {
@@ -19,12 +18,12 @@ export default class extends Page {
         Router.push('/auth/callback')
       }
     }
-      
+
     props.email = query.email
-    
+
     return props
   }
-  
+
   render() {
     return (
       <Layout {...this.props} navmenu={false} signinBtn={false}>

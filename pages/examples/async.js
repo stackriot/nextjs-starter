@@ -1,23 +1,22 @@
 /* global window */
 import React from 'react'
-import { Row, Col, Nav, NavItem, NavLink } from 'reactstrap'
+import {Row, Col, Nav, NavItem, NavLink} from 'reactstrap'
 import Page from '../../components/page'
 import Layout from '../../components/layout'
 import AsyncData from '../../components/async-data'
 
 export default class extends Page {
-
   /* eslint no-undefined: "error" */
   static async getInitialProps({req}) {
     // Inherit standard props from the Page (i.e. with session data)
-    let props = await super.getInitialProps({req})
+    const props = await super.getInitialProps({req})
 
     // If running on server, perform Async call
     if (typeof window === 'undefined') {
       try {
         props.posts = await AsyncData.getData()
       } catch (e) {
-        props.error = "Unable to fetch AsyncData on server"
+        props.error = 'Unable to fetch AsyncData on server'
       }
     }
 
@@ -37,8 +36,8 @@ export default class extends Page {
   // This allows us to render the page on the client without delaying rendering,
   // then load the data fetched via an async call in when we have it.
   async componentDidMount() {
-    // Only render posts client side if they are not populate (if the page was 
-    // rendered on the server, the state will be inherited from the server 
+    // Only render posts client side if they are not populate (if the page was
+    // rendered on the server, the state will be inherited from the server
     // render by the client)
     if (this.state.posts === null) {
       try {
@@ -48,7 +47,7 @@ export default class extends Page {
         })
       } catch (e) {
         this.setState({
-          error: "Unable to fetch AsyncData on client"
+          error: 'Unable to fetch AsyncData on client'
         })
       }
     }
@@ -91,7 +90,6 @@ export default class extends Page {
       </Layout>
     )
   }
-
 }
 
 export class RenderPosts extends React.Component {
@@ -99,12 +97,13 @@ export class RenderPosts extends React.Component {
     if (this.props.error) {
       // Display error if posts have fialed to load
       return <p><span className="font-weight-bold">Error loading posts:</span> {this.props.error}</p>
-    } else if (!this.props.posts) {
+    } if (!this.props.posts) {
       // Display place holder if posts are still loading (and no error)
       return <p><i>Loading content…</i></p>
-    } else {
-      // Display posts
-      return <React.Fragment>
+    }
+    // Display posts
+    return (
+      <React.Fragment>
         {
           this.props.posts.map((post, i) => (
             <div key={i}>
@@ -114,6 +113,6 @@ export class RenderPosts extends React.Component {
           ))
         }
       </React.Fragment>
-    }
+    )
   }
 }

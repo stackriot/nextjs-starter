@@ -1,5 +1,5 @@
 import SyntaxHighlighter from 'react-syntax-highlighter/prism'
-import { atomDark as SyntaxHighlighterTheme } from 'react-syntax-highlighter/styles/prism'
+import {atomDark as SyntaxHighlighterTheme} from 'react-syntax-highlighter/styles/prism'
 import Page from '../../components/page'
 import Layout from '../../components/layout'
 
@@ -45,7 +45,7 @@ export default class extends Page {
         </p>
         <h3>Example .env</h3>
         <SyntaxHighlighter style={SyntaxHighlighterTheme} language="bash" className="mb-3">
-{`SERVER_URL=http://localhost:3000
+          {`SERVER_URL=http://localhost:3000
 MONGO_URI=mongodb://localhost:27017/my-database
 FACEBOOK_ID=
 FACEBOOK_SECRET=
@@ -100,14 +100,14 @@ EMAIL_PASSWORD=`}
             <p>
               It includes configuration examples for Facebook, Google and Twitter
               oAuth, which can easily be copied and replicated to add support
-              for signing in other oAuth providers. For tips on configuring 
+              for signing in other oAuth providers. For tips on configuring
               oAuth see <a href="https://github.com/iaincollins/nextjs-starter/blob/master/AUTHENTICATION.md">AUTHENTICATION.md</a>
             </p>
           </li>
         </ul>
         <h2>Using NextAuth in Pages</h2>
         <p>
-          Pages in this project extend from the <span className="font-weight-bold">Page</span> component 
+          Pages in this project extend from the <span className="font-weight-bold">Page</span> component
           in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/components/page.js">components/page.js</a>.
         </p>
         <p>
@@ -115,7 +115,7 @@ EMAIL_PASSWORD=`}
           the current session state.
         </p>
         <SyntaxHighlighter style={SyntaxHighlighterTheme} language="javascript">
-{`import React from 'react'
+          {`import React from 'react'
 import { NextAuth } from 'next-auth/client'
 
 export default class extends React.Component {
@@ -135,7 +135,7 @@ export default class extends React.Component {
           from Express Session by parsing the <span className="font-weight-bold">req</span> object.
         </p>
         <p>
-          If a user is signed in <span className="font-weight-bold">this.session.user</span> will contain 
+          If a user is signed in <span className="font-weight-bold">this.session.user</span> will contain
           a user object. If they are not logged in, it will not be set.
         </p>
         <p>

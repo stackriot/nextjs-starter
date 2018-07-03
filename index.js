@@ -5,14 +5,14 @@ const nextAuth = require('next-auth')
 const nextAuthConfig = require('./next-auth.config')
 
 const routes = {
-  admin:  require('./routes/admin'),
-  account:  require('./routes/account')
+  admin: require('./routes/admin'),
+  account: require('./routes/account')
 }
 
 // Load environment variables from .env file if present
 require('dotenv').load()
 
-process.on('uncaughtException', function(err) {
+process.on('uncaughtException', err => {
   console.error('Uncaught Exception: ', err)
 })
 

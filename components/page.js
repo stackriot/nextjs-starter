@@ -1,16 +1,15 @@
 import React from 'react'
-import Layout from '../components/layout'
-import { NextAuth } from 'next-auth/client'
+import {NextAuth} from 'next-auth/client'
+import Layout from './layout'
 
 export default class extends React.Component {
-  
   static async getInitialProps({req}) {
     return {
-      session: await NextAuth.init({req}),// Add this.props.session to all pages
+      session: await NextAuth.init({req}), // Add this.props.session to all pages
       lang: 'en'// Add a lang property for accessibility
     }
   }
-  
+
   adminAcccessOnly() {
     return (
       <Layout {...this.props} navmenu={false}>
@@ -21,5 +20,4 @@ export default class extends React.Component {
       </Layout>
     )
   }
-
 }

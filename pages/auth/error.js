@@ -4,9 +4,8 @@ import Page from '../../components/page'
 import Layout from '../../components/layout'
 
 export default class extends Page {
-
   static async getInitialProps({req, query}) {
-    let props = await super.getInitialProps({req})
+    const props = await super.getInitialProps({req})
     props.action = query.action || null
     props.type = query.type || null
     props.service = query.service || null
@@ -15,7 +14,7 @@ export default class extends Page {
 
   render() {
     if (this.props.action == 'signin' && this.props.type == 'oauth') {
-      return(
+      return (
         <Layout {...this.props} navmenu={false}>
           <div className="text-center mb-5">
             <h1 className="display-4 mt-5 mb-3">Unable to sign in</h1>
@@ -27,7 +26,7 @@ export default class extends Page {
               <div className="text-muted">
                 <h4 className="mb-2">Why am I seeing this?</h4>
                 <p className="mb-2">
-                  It looks like you might have already signed up using another service. 
+                  It looks like you might have already signed up using another service.
                 </p>
                 <p className="mb-3">
                   To protect your account, if you have perviously signed up
@@ -43,8 +42,8 @@ export default class extends Page {
           </div>
         </Layout>
       )
-    } else if (this.props.action == 'signin' && this.props.type == 'token-invalid') {
-      return(
+    } if (this.props.action == 'signin' && this.props.type == 'token-invalid') {
+      return (
         <Layout {...this.props} navmenu={false}>
           <div className="text-center mb-5">
             <h1 className="display-4 mt-5 mb-2">Link not valid</h1>
@@ -53,16 +52,15 @@ export default class extends Page {
           </div>
         </Layout>
       )
-    } else {
-      return(
-        <Layout {...this.props} navmenu={false}>
-          <div className="text-center mb-5">
-            <h1 className="display-4 mt-5">Error signing in</h1>
-            <p className="lead">An error occured while trying to sign in.</p>
-            <p className="lead"><Link href="/auth"><a>Sign in with email or another service</a></Link></p>
-          </div>
-        </Layout>
-      )
     }
+    return (
+      <Layout {...this.props} navmenu={false}>
+        <div className="text-center mb-5">
+          <h1 className="display-4 mt-5">Error signing in</h1>
+          <p className="lead">An error occured while trying to sign in.</p>
+          <p className="lead"><Link href="/auth"><a>Sign in with email or another service</a></Link></p>
+        </div>
+      </Layout>
+    )
   }
 }

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { Container, Row, Col, Button, Jumbotron, ListGroup, ListGroupItem } from 'reactstrap'
+import {Container, Row, Col, Button, Jumbotron, ListGroup, ListGroupItem} from 'reactstrap'
 import Page from '../components/page'
 import Layout from '../components/layout'
 
@@ -12,7 +12,8 @@ export default class extends Page {
           backgroundColor: 'rgba(73,155,234,1)',
           background: 'radial-gradient(ellipse at center, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%)',
           boxShadow: 'inset 0 0 100px rgba(0,0,0,0.1)'
-          }}>
+        }}
+        >
           <Container className="mt-2 mb-2">
             <h1 className="display-2 mb-3" style={{fontWeight: 300}}>
               <span style={{fontWeight: 600}}>
@@ -46,7 +47,8 @@ export default class extends Page {
                   font-size: 1.5em;
                 }
               }
-            `}</style>
+            `}
+            </style>
           </Container>
         </Jumbotron>
         <Container>
@@ -86,7 +88,7 @@ export default class extends Page {
           <h2 className="text-center display-4 mt-2 mb-5">Getting Started</h2>
           <p>
             <a href="https://github.com/zeit/next.js">Next.js</a> from <a href="https://zeit.co">Zeit</a> makes creating
-            websites with React easy. 
+            websites with React easy.
           </p>
           <p>
             This project integrates several concepts to show how you can use them together in a Next.js project.
@@ -95,17 +97,17 @@ export default class extends Page {
             It also serves as template for creating new projects.
           </p>
           <pre>
-{`git clone https://github.com/iaincollins/nextjs-starter.git
+            {`git clone https://github.com/iaincollins/nextjs-starter.git
 npm install
 npm run dev`}
           </pre>
           <p>
             The simplest way to deploy projects to the cloud is with with 'now', which is from Zeit, the creators of Next.js framework.
           </p>
-            <pre>
-{`npm install -g now
+          <pre>
+            {`npm install -g now
 now`}
-            </pre>
+          </pre>
           <p>
             For more information on how to build and deploy see <a href="https://github.com/iaincollins/nextjs-starter/blob/master/README.md">README.md</a>
           </p>

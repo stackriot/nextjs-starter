@@ -57,7 +57,7 @@
     "postinstall": "next build"
   },
   "engines": {
-    "node": "8.11.x"
+    "node": ">=8.11.x"
   },
   "xo": {
     "space:": 2,

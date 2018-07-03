@@ -42,7 +42,8 @@ export default class extends React.Component {
               0% {transform: rotate(0deg); }
               100% {transform: rotate(360deg); }
             }
-          `}</style>
+          `}
+          </style>
           <span className="circle-loader">
             <svg className="circle" width="60" height="60" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <circle cx="30" cy="30" r="15"/>
@@ -50,10 +51,10 @@ export default class extends React.Component {
           </span>
         </React.Fragment>
       )
-    } else {
-      return (
-        <React.Fragment>
-          <style jsx global>{`
+    }
+    return (
+      <React.Fragment>
+        <style jsx global>{`
             .circle-loader {
               display: block;
               text-center;
@@ -88,14 +89,14 @@ export default class extends React.Component {
               0% {transform: rotate(0deg); }
               100% {transform: rotate(360deg); }
             }
-          `}</style>
-          <span className="circle-loader">
-            <svg className="circle" width="60" height="60" version="1.1" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="30" cy="30" r="15"/>
-            </svg>
-          </span>
-        </React.Fragment>
-      )
-    }
+          `}
+        </style>
+        <span className="circle-loader">
+          <svg className="circle" width="60" height="60" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="15"/>
+          </svg>
+        </span>
+      </React.Fragment>
+    )
   }
 }

@@ -1,5 +1,5 @@
 import SyntaxHighlighter from 'react-syntax-highlighter/prism'
-import { atomDark as SyntaxHighlighterTheme } from 'react-syntax-highlighter/styles/prism'
+import {atomDark as SyntaxHighlighterTheme} from 'react-syntax-highlighter/styles/prism'
 import Page from '../../components/page'
 import Layout from '../../components/layout'
 
@@ -19,8 +19,8 @@ export default class extends Page {
         <p>
           This is loaded and added to the page in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/components/layout.js">components/layout.js</a>.
         </p>
-        <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"javascript"}>
-{`import Styles from '../css/index.scss'
+        <SyntaxHighlighter style={SyntaxHighlighterTheme} language="javascript">
+          {`import Styles from '../css/index.scss'
 
 ...
 
@@ -37,8 +37,8 @@ export default class extends Page {
           Being able to import SCSS/CSS like this is made possible with webpack
           configuration in <a href="https://github.com/iaincollins/nextjs-starter/blob/master/next.config.js">next.config.js</a>.
         </p>
-        <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"javascript"}>
-{`config.module.rules.push(
+        <SyntaxHighlighter style={SyntaxHighlighterTheme} language="javascript">
+          {`config.module.rules.push(
 {
   test: /\.(css|scss)/,
   loader: 'emit-file-loader',
@@ -60,8 +60,8 @@ export default class extends Page {
         <p>
           Inline styles are styles applied directly to an element. They can reference JavaScript variables.
         </p>
-        <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"jsx"}>
-{`<p style={{border: '2px solid blue', padding: 5, fontSize: '1em'}}>
+        <SyntaxHighlighter style={SyntaxHighlighterTheme} language="jsx">
+          {`<p style={{border: '2px solid blue', padding: 5, fontSize: '1em'}}>
   Example of an inline style.
 </p>`}
         </SyntaxHighlighter>
@@ -80,9 +80,10 @@ export default class extends Page {
             border: 2px solid red;
             padding: 5px;
           }
-        `}</style>
-        <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"jsx"}>
-{`<style jsx>{\`
+        `}
+        </style>
+        <SyntaxHighlighter style={SyntaxHighlighterTheme} language="jsx">
+          {`<style jsx>{\`
   .component-scoped-css {
     border: 2px solid red;
     padding: 5px;
@@ -97,8 +98,8 @@ export default class extends Page {
           Use the 'global' option to have CSS defined with JSX apply outside of the scope of the component where it is declared.
           This will impact all elements on the current page.
         </p>
-        <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"jsx"}>
-{`<style jsx global>{\`
+        <SyntaxHighlighter style={SyntaxHighlighterTheme} language="jsx">
+          {`<style jsx global>{\`
   div {
     border: 2px solid blue;
   }
@@ -108,8 +109,8 @@ export default class extends Page {
         <p>
           The <a href="https://ionicframework.com/docs/ionicons/">Ionicon</a> icon font assets are served directly from NPM using a custom route defined in Express.
         </p>
-        <SyntaxHighlighter style={SyntaxHighlighterTheme} language={"javascript"}>
-{`expressApp.use('/fonts/ionicons', express.static('./node_modules/ionicons/dist/fonts'))`}
+        <SyntaxHighlighter style={SyntaxHighlighterTheme} language="javascript">
+          {`expressApp.use('/fonts/ionicons', express.static('./node_modules/ionicons/dist/fonts'))`}
         </SyntaxHighlighter>
         <p>
           Note: This is a simple way to include assets like fonts, but you should take care when
@@ -120,7 +121,7 @@ export default class extends Page {
         <p>
           Alternatively, you also import assets into your project by copying them into the <a href="/static/example.html">/static</a> directory and serving them from there.
         </p>
-     </Layout>
+      </Layout>
     )
   }
 }
